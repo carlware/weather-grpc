@@ -12,7 +12,7 @@ var mainCmd = &cobra.Command{
 
 func init() {
 	mainCmd.AddCommand(getWeatherCmd)
-	// mainCmd.AddCommand(serverCmd)
+	mainCmd.AddCommand(serverCmd)
 }
 
 // Execute main command

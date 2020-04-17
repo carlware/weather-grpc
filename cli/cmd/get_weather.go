@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"crl/weather/src/interfaces/weather/openweather"
 	"crl/weather/src/models"
 	"crl/weather/src/services/weather/cases"
 	"fmt"
@@ -17,10 +18,12 @@ var getWeatherCmd = &cobra.Command{
 	Aliases: []string{"t"},
 	Short:   "get temperature",
 	Run: func(cmd *cobra.Command, args []string) {
+		weatherAPI := openweather.NewOpenWeatherClient()
+
 		req, _ := cases.GetWeather(context.TODO(), &models.GetWeatherRequest{
 			City: city,
-		})
-		fmt.Println(city, " - ", req.Temperature, "F")
+		}, weatherAPI)
+		fmt.Println(city, " - ", req.Temperature, "K")
 	},
 }
 
