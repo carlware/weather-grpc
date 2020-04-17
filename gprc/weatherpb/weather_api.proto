@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package weatherpb;
+
+service WeatherAPI {
+  rpc GetWeather(GetWeatherRequest) returns (GetWeatherResponse);
+}
+
+
+message GetWeatherRequest {
+  string city = 1;
+}
+
+message GetWeatherResponse {
+  string temperature = 1;
+}
