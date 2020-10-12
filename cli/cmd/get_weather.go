@@ -29,5 +29,5 @@ var getWeatherCmd = &cobra.Command{
 
 func init() {
 	getWeatherCmd.Flags().StringVarP(&city, "city", "c", "Corregidora", "City")
-	getWeatherCmd.Flags().BoolVarP(&isCelsius, "celsius", "f", false, "weather or not scale is celsius")
+	//getWeatherCmd.Flags().BoolVarP(&isCelsius, "celsius", "f", false, "Celsis")
 }
